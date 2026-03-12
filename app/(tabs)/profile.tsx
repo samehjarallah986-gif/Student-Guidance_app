@@ -60,10 +60,6 @@ if (!userId) {
        <Text style={styles.menu} onPress={() => router.push('/personal-details')}>
          • Personal Information
        </Text>
-       <Text style={styles.menu}>• Notifications</Text>
-       <Text style={styles.menu}>• Wishlist</Text>
-       <Text style={styles.menu}>• Saved</Text>
-       <Text style={styles.menu}>• Settings</Text>
      </View>
 
      <CustomButton title="Sign Out" onPress={signOut} />

@@ -4,8 +4,8 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 interface AuthContextType {
   user: any; // You might want to define a more specific user type
   isLoading: boolean;
-  signIn: (email: string, password: string) => Promise<void>;
-  signUp: (email: string, password: string, username: string) => Promise<void>;
+  signIn: (email: string, password: string) => Promise<any>;
+  signUp: (email: string, password: string, username: string) => Promise<any>;
   signOut: () => Promise<void>;
 }
 
@@ -27,8 +27,11 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       try {
         const currentAccount = await account.get();
         setUser(currentAccount);
-      } catch (error) {
-        console.error("Failed to fetch user:", error);
+      } catch (error: any) {
+        // Silently fail on 401 (expected for unauthenticated users on app startup)
+        if (error?.code !== 401) {
+          console.error("Failed to fetch user:", error);
+        }
         setUser(null);
       } finally {
         setIsLoading(false);

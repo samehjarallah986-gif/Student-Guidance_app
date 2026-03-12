@@ -1,4 +1,4 @@
-import { Account, Client, Databases, ID, Query } from "appwrite";
+import { Account, Client, Databases, ID, Permission, Query, Role } from "appwrite";
 
 
 const client = new Client()
@@ -14,7 +14,7 @@ export const COL_QUESTIONNAIRES = "questionnaires";
 export const COL_SAVED = "saved";
 export const COL_PROFILES = "users_profiles";
 
-export { ID, Query };
+export { ID, Permission, Query, Role };
 
 export async function checkSession() {
   try {

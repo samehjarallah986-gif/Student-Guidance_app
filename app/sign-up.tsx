@@ -1,6 +1,6 @@
 import { router } from "expo-router";
 import React, { useState } from "react";
-import { ActivityIndicator, Alert, Pressable, Text, View } from "react-native";
+import { ActivityIndicator, Alert, Pressable, StyleSheet, Text, View } from "react-native";
 import CustomButton from "../components/CustomButton";
 import CustomInput from "../components/CustomInput";
 import { useAuth } from "../hooks/AuthContext";
@@ -13,23 +13,19 @@ export default function SignUp() {
   const [password, setPassword] = useState("");
   const [school, setSchool] = useState("");
   const [loading, setLoading] = useState(false);
-  const { signUp, user } = useAuth();
+  const { signUp } = useAuth();
 
   const handleSubmit = async () => {
     setLoading(true);
     try {
       const name = username.trim() || "Student";
-      await signUp(email, password, name);
+      const currentAccount = await signUp(email, password, name);
 
-      // Store user profile data immediately after signup
-      // The user object from useAuth will be updated after signUp completes successfully
-      if (user) {
-        await createUserProfile(user.$id, {
-          username: name,
-          role: role.trim(),
-          school: school.trim(),
-        });
-      }
+      await createUserProfile(currentAccount.$id, {
+        username: name,
+        role: role.trim(),
+        school: school.trim(),
+      });
       
       router.replace(`/questionnare?name=${encodeURIComponent(name)}`);
     } catch (err: any) {
@@ -69,3 +65,32 @@ export default function SignUp() {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 20,
+    justifyContent: "center",
+    backgroundColor: "#fff",
+  },
+  logoSmall: {
+    width: 80,
+    height: 80,
+    borderRadius: 40,
+    backgroundColor: "#f0f0f0",
+    justifyContent: "center",
+    alignItems: "center",
+    alignSelf: "center",
+    marginBottom: 30,
+  },
+  h1: {
+    fontSize: 28,
+    fontWeight: "bold",
+    marginBottom: 20,
+    textAlign: "center",
+  },
+  footerRow: {
+    marginTop: 20,
+    alignItems: "center",
+  },
+});

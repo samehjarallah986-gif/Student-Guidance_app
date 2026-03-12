@@ -7,7 +7,7 @@ import CustomButton from "../components/CustomButton";
 import CustomInput from "../components/CustomInput";
 import { activities, type Category } from "../data/activities";
 import { careers } from "../data/careers";
-import { COL_SAVED, DB_ID, ID, Query, databases, getMe } from "../services/appwrite";
+import { COL_SAVED, DB_ID, ID, Permission, Query, Role, databases, getMe } from "../services/appwrite";
 
 type SavedDoc = {
   $id: string;
@@ -66,7 +66,12 @@ export default function Results() {
         ]);
 
         setSavedDocs(res.documents as unknown as SavedDoc[]);
-      } catch (e) {
+      } catch (e: any) {
+        // Unauthorized here usually means collection permissions are not configured yet.
+        if (e?.code === 401 || e?.code === 403) {
+          setSavedDocs([]);
+          return;
+        }
         console.error(e);
         Alert.alert("Error", "Failed to load saved items.");
       } finally {
@@ -106,10 +111,9 @@ export default function Results() {
 
       const matchesCategory = !derivedCategory || a.category === derivedCategory;
 
-      const priceNumber =
-        a.price.toLowerCase() === "free"
-          ? 0
-          : Number(a.price.replace("$", "").trim());
+      const rawPrice = a.price.trim().toLowerCase();
+      const normalizedPrice = rawPrice.replace(/[^0-9.,-]/g, "").replace(",", ".");
+      const priceNumber = rawPrice === "free" ? 0 : Number(normalizedPrice);
 
       const matchesBudget =
         parsedMaxBudget === null
@@ -148,8 +152,19 @@ export default function Results() {
       item: c,
     }));
 
-    return careerFilter ? wrappedCareers : [...wrappedActivities, ...wrappedCareers];
-  }, [query, location, category, parsedMaxBudget]);
+    // If user picked an experience category, show only activity results for that category.
+    if (derivedCategory) {
+      return wrappedActivities;
+    }
+
+    // Careers chip means careers-only mode.
+    if (careerFilter) {
+      return wrappedCareers;
+    }
+
+    // Default mode: show both activity + career matches.
+    return [...wrappedActivities, ...wrappedCareers];
+  }, [query, location, category, parsedMaxBudget, careerFilter]);
 
   const setCategoryQuick = (c: Category) =>
     setCategory((prev) => (prev === c ? "" : c));
@@ -177,12 +192,21 @@ export default function Results() {
             userId: me.$id,
             itemType: "activity",
             itemId: activityId,
-          }
+          },
+          [
+            Permission.read(Role.user(me.$id)),
+            Permission.update(Role.user(me.$id)),
+            Permission.delete(Role.user(me.$id)),
+          ]
         );
 
         setSavedDocs((prev) => [...prev, created as unknown as SavedDoc]);
       }
-    } catch (e) {
+    } catch (e: any) {
+      if (e?.code === 401 || e?.code === 403) {
+        Alert.alert("Permissions", "Please enable read/write permissions for the saved collection in Appwrite.");
+        return;
+      }
       console.error(e);
       Alert.alert("Error", "Could not update saved list.");
     }

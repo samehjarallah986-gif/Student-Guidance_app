@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Alert, StyleSheet, Text, View } from "react-native";
 import CustomButton from "../components/CustomButton";
 import { activities, type Activity } from "../data/activities";
-import { COL_SAVED, DB_ID, ID, Query, databases, getMe } from "../services/appwrite";
+import { COL_SAVED, DB_ID, ID, Permission, Query, Role, databases, getMe } from "../services/appwrite";
 
 type SavedDoc = {
   $id: string;
@@ -79,11 +79,21 @@ export default function Detail() {
         return;
       }
 
-      const created = await databases.createDocument(DB_ID, COL_SAVED, ID.unique(), {
-        userId: me.$id,
-        itemType: "activity",
-        itemId: activity.id,
-      });
+      const created = await databases.createDocument(
+        DB_ID,
+        COL_SAVED,
+        ID.unique(),
+        {
+          userId: me.$id,
+          itemType: "activity",
+          itemId: activity.id,
+        },
+        [
+          Permission.read(Role.user(me.$id)),
+          Permission.update(Role.user(me.$id)),
+          Permission.delete(Role.user(me.$id)),
+        ]
+      );
 
       setSavedDocId((created as any).$id);
       Alert.alert("Saved", "Added to your Saved list.");
@@ -143,8 +153,8 @@ export default function Detail() {
         disabled={loading || !meId}
       />
 
-      <CustomButton title="Get Directions" onPress={() => {}} />
-      <CustomButton title="Share" onPress={() => {}} />
+      <CustomButton title="Get Directions (Coming Soon)" onPress={() => {}} />
+      <CustomButton title="Share (Coming Soon)" onPress={() => {}} />
     </View>
   );
 }

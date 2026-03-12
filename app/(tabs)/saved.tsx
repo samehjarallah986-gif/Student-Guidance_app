@@ -40,7 +40,12 @@ export default function Saved() {
       ]);
 
       setSavedDocs(res.documents as unknown as SavedDoc[]);
-    } catch (e) {
+    } catch (e: any) {
+      // Unauthorized here usually means collection permissions are not configured yet.
+      if (e?.code === 401 || e?.code === 403) {
+        setSavedDocs([]);
+        return;
+      }
       console.error(e);
       Alert.alert("Error", "Failed to load saved items.");
     } finally {
