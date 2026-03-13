@@ -124,3 +124,91 @@ Start the Expo development server:
 ```bash
 npx expo start
 ```
+You can run the app using:
+- Expo Go on your phone
+- Android emulator
+- iOS simulator
+
+## Appwrite Database Setup
+Database ID: 
+```bash
+69a741290018b7af01b3
+```
+
+Collections:
+
+users_profiles:
+Stores user profile information.
+Fields:
+- userId
+- fullName
+- school
+- gradeLevel
+- city
+
+questionnaires:
+Stores questionnaire responses.
+
+- Fields:
+
+- userId
+
+- majors
+
+- careerInMind
+
+- hobbies
+
+- parentsJobs
+
+- daysjob
+
+- volunteerInterest
+
+- psychometricGrade
+
+saved:
+Stores saved activities.
+
+- Fields:
+
+- userId
+
+- itemType
+
+- itemId
+
+## Future Improvements
+
+Planned improvements for future versions:
+
+- Career recommendations based on questionnaire answers
+
+- AI-powered career guidance
+
+- Integration with external opportunity APIs
+
+- Matching activities with career interests
+
+- Notifications for new opportunities
+
+- Expanded career database
+
+## Purpose of the Project:
+
+This project was developed as part of a developers workshop milestone to demonstrate:
+
+- React Native mobile development
+
+- Reusable components
+
+- React hooks
+
+- Backend/database integration
+
+- Organized project architecture
+
+## Author
+
+Student Career Guidance Platform
+Developed as part of the YL Developers Track Workshop.
