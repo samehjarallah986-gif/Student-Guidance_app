@@ -198,6 +198,8 @@ Planned improvements for future versions:
 
 - Matching activities with career interests
 
+- A teacher's account where they can upload activities from their own careers that they persue
+
 - Notifications for new opportunities
 
 - Expanded career database
