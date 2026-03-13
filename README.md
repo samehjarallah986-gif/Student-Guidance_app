@@ -137,18 +137,22 @@ You can run the app using:
 
 ### Collections:
 
-### users_profiles:
+ users_profiles:
 
 Stores user profile information.
 
 Fields:
 - userId
+
 - fullName
+
 - school
+
 - gradeLevel
+
 - city
 
-### questionnaires:
+ questionnaires:
 
 Stores questionnaire responses.
 
@@ -170,7 +174,7 @@ Fields:
 
 - psychometricGrade
 
-### saved:
+ saved:
 
 Stores saved activities.
 
