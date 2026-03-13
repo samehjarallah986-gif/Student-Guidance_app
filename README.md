@@ -78,12 +78,13 @@ Local datasets used in the project:
 
 ## Project Structure
 
+```bash
 
 app
 ├── (tabs)
-│ ├── index.tsx
-│ ├── profile.tsx
-│ └── saved.tsx
+│   ├── index.tsx
+│   ├── profile.tsx
+│   └── saved.tsx
 │
 ├── detail.tsx
 ├── questionnaire.tsx
@@ -102,12 +103,7 @@ data
 
 services
 └── appwrite.ts
-
-
----
-
-## How to Run the Project
-
+``` 
 
 ---
 
