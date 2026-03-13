@@ -130,15 +130,17 @@ You can run the app using:
 - iOS simulator
 
 ## Appwrite Database Setup
-Database ID: 
+### Database ID: 
 ```bash
 69a741290018b7af01b3
 ```
 
-Collections:
+### Collections:
 
-users_profiles:
+### users_profiles:
+
 Stores user profile information.
+
 Fields:
 - userId
 - fullName
@@ -146,10 +148,11 @@ Fields:
 - gradeLevel
 - city
 
-questionnaires:
+### questionnaires:
+
 Stores questionnaire responses.
 
-- Fields:
+Fields:
 
 - userId
 
@@ -167,10 +170,11 @@ Stores questionnaire responses.
 
 - psychometricGrade
 
-saved:
+### saved:
+
 Stores saved activities.
 
-- Fields:
+ Fields:
 
 - userId
 
