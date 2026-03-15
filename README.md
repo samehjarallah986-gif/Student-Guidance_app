@@ -143,13 +143,9 @@ Stores user profile information.
 
 Fields:
 - userId
-
 - fullName
-
 - school
-
 - gradeLevel
-
 - city
 
  questionnaires:
@@ -159,19 +155,12 @@ Stores questionnaire responses.
 Fields:
 
 - userId
-
 - majors
-
 - careerInMind
-
 - hobbies
-
 - parentsJobs
-
 - daysjob
-
 - volunteerInterest
-
 - psychometricGrade
 
  saved:
@@ -181,9 +170,7 @@ Stores saved activities.
  Fields:
 
 - userId
-
 - itemType
-
 - itemId
 
 ## Future Improvements
@@ -191,17 +178,11 @@ Stores saved activities.
 Planned improvements for future versions:
 
 - Career recommendations based on questionnaire answers
-
 - AI-powered career guidance
-
 - Integration with external opportunity APIs
-
 - Matching activities with career interests
-
 - A teacher's account where they can upload activities from their own careers that they persue
-
 - Notifications for new opportunities
-
 - Expanded career database
 
 ## Purpose of the Project:
@@ -209,16 +190,15 @@ Planned improvements for future versions:
 This project was developed as part of a developers workshop milestone to demonstrate:
 
 - React Native mobile development
-
 - Reusable components
-
 - React hooks
-
 - Backend/database integration
-
 - Organized project architecture
 
 ## Author
 
+Sameh Jarallah
+
 Student Career Guidance Platform
-Developed as part of the YL Developers Track Workshop.
+
+Developed as part of the YL Developers Startup App.
