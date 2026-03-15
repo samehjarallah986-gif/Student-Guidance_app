@@ -1,6 +1,6 @@
 import { router } from "expo-router";
 import React, { useState } from "react";
-import { ActivityIndicator, Alert, Pressable, StyleSheet, Text, View } from "react-native";
+import { ActivityIndicator, Alert, Pressable, StyleSheet, Text, View, Image } from "react-native";
 import CustomButton from "../components/CustomButton";
 import CustomInput from "../components/CustomInput";
 import { useAuth } from "../hooks/AuthContext";
@@ -39,7 +39,7 @@ export default function SignUp() {
   return (
     <View style={styles.container}>
       <View style={styles.logoSmall}>
-        <Text style={{ fontWeight: "900" }}>LOGO</Text>
+        <Image source={require("../assets/images/logo.png")} style={styles.logoImage} resizeMode="contain" />
       </View>
 
       <Text style={styles.h1}>Sign Up</Text>
@@ -74,14 +74,23 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
   logoSmall: {
-    width: 80,
-    height: 80,
-    borderRadius: 40,
-    backgroundColor: "#f0f0f0",
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+    backgroundColor: "#fff",
     justifyContent: "center",
     alignItems: "center",
     alignSelf: "center",
     marginBottom: 30,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
+  },
+  logoImage: {
+    width: "70%",
+    height: "70%",
   },
   h1: {
     fontSize: 28,
