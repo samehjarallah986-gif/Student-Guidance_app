@@ -55,8 +55,8 @@ export default function CareerDetail() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: "#fff" },
-  title: { fontSize: 28, fontWeight: "900", marginBottom: 16 },
-  label: { fontWeight: "900", marginTop: 12 },
-  value: { color: "#333", marginTop: 4 },
+  container: { flex: 1, backgroundColor: "#e2f5ff" },
+  title: { fontSize: 28, fontFamily: 'Poppins_700Bold', color: '#203b60', marginBottom: 16 },
+  label: { fontFamily: 'Inter_700Bold', color: '#107c8f', marginTop: 12 },
+  value: { fontFamily: 'Inter_400Regular', color: '#107c8f', marginTop: 4 },
 });

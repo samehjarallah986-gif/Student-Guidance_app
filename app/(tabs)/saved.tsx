@@ -104,7 +104,7 @@ export default function Saved() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 22, paddingTop: 60, backgroundColor: "#fff" },
-  h1: { fontSize: 28, fontWeight: "900" },
-  sub: { marginTop: 6, marginBottom: 14, color: "#444" },
+  container: { flex: 1, padding: 22, paddingTop: 60, backgroundColor: "#e2f5ff" },
+  h1: { fontSize: 28, fontFamily: 'Poppins_700Bold', color: '#203b60' },
+  sub: { marginTop: 6, marginBottom: 14, fontFamily: 'Inter_400Regular', color: '#107c8f' },
 });

@@ -31,7 +31,7 @@ export default function CustomInput({
 }
 
 const styles = StyleSheet.create({
-  label: { fontWeight: '700' , marginBottom: 6},
+  label: { fontFamily: 'Inter_700Bold', color: '#107c8f', marginBottom: 6},
   input: {
     borderWidth: 1,
     borderColor: '#111',
@@ -39,5 +39,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     paddingVertical: 10,
     marginBottom:12,
+    fontFamily: 'Inter_400Regular',
+    color: '#107c8f',
   },
 });

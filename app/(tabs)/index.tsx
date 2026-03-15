@@ -33,6 +33,6 @@ export default function Home() {
 }
 
 const styles = StyleSheet.create({
- container: { flex: 1, padding: 22, paddingTop: 70, backgroundColor: "#fff" },
- h1: { fontSize: 28, fontWeight: "900", marginBottom: 18 },
+ container: { flex: 1, padding: 22, paddingTop: 70, backgroundColor: "#e2f5ff" },
+ h1: { fontSize: 28, fontFamily: 'Poppins_700Bold', color: '#203b60', marginBottom: 18 },
 });

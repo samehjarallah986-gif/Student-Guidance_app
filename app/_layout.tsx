@@ -1,6 +1,8 @@
 import { Stack, useRouter } from 'expo-router';
 import { useEffect } from 'react';
 import { AuthProvider, useAuth } from '../hooks/AuthContext';
+import { useFonts, Poppins_700Bold } from '@expo-google-fonts/poppins';
+import { Inter_400Regular, Inter_700Bold } from '@expo-google-fonts/inter';
 
 function RootLayoutNav() {
   const { user, isLoading } = useAuth();
@@ -24,25 +26,35 @@ function RootLayoutNav() {
       <Stack.Screen name='questionnare' />
       <Stack.Screen
         name='results'
-        options={{ headerShown: true, title: 'Search Results' }}
+        options={{ headerShown: true, title: 'Search Results', headerTitleStyle: { fontFamily: 'Poppins_700Bold', color: '#203b60' } }}
       />
       <Stack.Screen
         name='detail'
-        options={{ headerShown: true, title: 'Activity Details' }}
+        options={{ headerShown: true, title: 'Activity Details', headerTitleStyle: { fontFamily: 'Poppins_700Bold', color: '#203b60' } }}
       />
       <Stack.Screen
         name='career'
-        options={{ headerShown: true, title: 'Career Details' }}
+        options={{ headerShown: true, title: 'Career Details', headerTitleStyle: { fontFamily: 'Poppins_700Bold', color: '#203b60' } }}
       />
       <Stack.Screen
         name='personal-details'
-        options={{ headerShown: true, title: 'Personal Information' }}
+        options={{ headerShown: true, title: 'Personal Information', headerTitleStyle: { fontFamily: 'Poppins_700Bold', color: '#203b60' } }}
       />
     </Stack>
   );
 }
 
 export default function RootLayout(){
+  const [fontsLoaded] = useFonts({
+    Poppins_700Bold,
+    Inter_400Regular,
+    Inter_700Bold,
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
+
   return (
     <AuthProvider>
       <RootLayoutNav />

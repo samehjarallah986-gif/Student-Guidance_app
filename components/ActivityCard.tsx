@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
    marginBottom: 10,
  },
  row: { flexDirection: "row", justifyContent: "space-between", alignItems: "center" },
- title: { fontWeight: "800", flex: 1, paddingRight: 10 },
+ title: { fontFamily: 'Poppins_700Bold', color: '#203b60', flex: 1, paddingRight: 10 },
  heart: { fontSize: 18 },
- meta: { marginTop: 6, color: "#444" },
+ meta: { marginTop: 6, fontFamily: 'Inter_400Regular', color: '#107c8f' },
 });

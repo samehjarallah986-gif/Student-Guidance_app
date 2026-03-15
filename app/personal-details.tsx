@@ -58,8 +58,8 @@ export default function PersonalDetails() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: "#fff" },
-  h1: { fontSize: 28, fontWeight: "900", marginBottom: 16 },
-  h2: { fontSize: 22, fontWeight: "700", marginTop: 20, marginBottom: 8 },
-  field: { marginVertical: 4, color: "#333" },
+  container: { flex: 1, backgroundColor: "#e2f5ff" },
+  h1: { fontSize: 28, fontFamily: 'Poppins_700Bold', color: '#203b60', marginBottom: 16 },
+  h2: { fontSize: 22, fontFamily: 'Poppins_700Bold', color: '#203b60', marginTop: 20, marginBottom: 8 },
+  field: { marginVertical: 4, fontFamily: 'Inter_400Regular', color: '#107c8f' },
 });

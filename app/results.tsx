@@ -340,14 +340,14 @@ export default function Results() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 22, paddingTop: 60, backgroundColor: "#fff" },
+  container: { flex: 1, padding: 22, paddingTop: 60, backgroundColor: "#e2f5ff" },
   topRow: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "flex-start",
     gap: 12,
   },
-  h1: { fontSize: 20, fontWeight: "900", flex: 1 },
+  h1: { fontSize: 20, fontFamily: 'Poppins_700Bold', color: '#203b60', flex: 1 },
   filterBtn: {
     borderWidth: 1,
     borderColor: "#111",
@@ -355,7 +355,7 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     borderRadius: 8,
   },
-  sub: { marginTop: 8, marginBottom: 12, color: "#444" },
+  sub: { marginTop: 8, marginBottom: 12, fontFamily: 'Inter_400Regular', color: '#107c8f' },
 
   modalBackdrop: {
     flex: 1,
@@ -363,7 +363,7 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
   },
   modalCard: {
-    backgroundColor: "#fff",
+    backgroundColor: "#e2f5ff",
     padding: 18,
     borderTopLeftRadius: 18,
     borderTopRightRadius: 18,

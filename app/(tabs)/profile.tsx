@@ -68,8 +68,8 @@ if (!userId) {
 }
 
 const styles = StyleSheet.create({
- container: { flex: 1, padding: 22, paddingTop: 60, backgroundColor: "#fff" },
- h1: { fontSize: 28, fontWeight: "900", marginBottom: 14 },
- line: { marginTop: 6, color: "#333" },
- menu: { marginTop: 10, fontWeight: "700" },
+ container: { flex: 1, padding: 22, paddingTop: 60, backgroundColor: "#e2f5ff" },
+ h1: { fontSize: 28, fontFamily: 'Poppins_700Bold', color: '#203b60', marginBottom: 14 },
+ line: { marginTop: 6, fontFamily: 'Inter_400Regular', color: '#107c8f' },
+ menu: { marginTop: 10, fontFamily: 'Inter_700Bold', color: '#107c8f' },
 });

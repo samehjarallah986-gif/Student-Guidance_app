@@ -160,8 +160,8 @@ export default function Detail() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 22, paddingTop: 60, backgroundColor: "#fff" },
-  title: { fontSize: 18, fontWeight: "900", marginBottom: 12 },
+  container: { flex: 1, padding: 22, paddingTop: 60, backgroundColor: "#e2f5ff" },
+  title: { fontSize: 18, fontFamily: 'Poppins_700Bold', color: '#203b60', marginBottom: 12 },
   imgStub: {
     height: 160,
     borderRadius: 10,
@@ -170,6 +170,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#E0E0E0",
     marginBottom: 12,
   },
-  label: { fontWeight: "900", marginTop: 8 },
-  value: { color: "#333", marginTop: 2 },
+  label: { fontFamily: 'Inter_700Bold', color: '#107c8f', marginTop: 12 },
+  value: { fontFamily: 'Inter_400Regular', color: '#107c8f', marginTop: 2 },
 });

@@ -65,7 +65,7 @@ export default function Questionnaire() {
 
   return (
     <ScrollView
-      style={{ flex: 1, backgroundColor: "#fff" }}
+      style={{ flex: 1, backgroundColor: "#e2f5ff" }}
       contentContainerStyle={styles.container}
     >
       <Text style={styles.h1}>Questionnaire</Text>
@@ -85,5 +85,5 @@ export default function Questionnaire() {
 
 const styles = StyleSheet.create({
   container: { padding: 22, paddingTop: 60 },
-  h1: { fontSize: 28, fontWeight: "900", marginBottom: 20 },
+  h1: { fontSize: 28, fontFamily: 'Poppins_700Bold', color: '#203b60', marginBottom: 20 },
 });

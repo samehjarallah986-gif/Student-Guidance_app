@@ -22,12 +22,12 @@ export default function CustomButton ({ title, onPress, disabled, style }: Props
 
 const styles = StyleSheet.create({
   btn: {
-    backgroundColor: '#BDBDBD',
+    backgroundColor: '#27805a',
     paddingVertical: 12,
     borderRadius: 6,
     alignItems: 'center',
     marginTop: 10,
   },
   disabled: { opacity: 0.6 },
-  text: {fontWeight: '700'}
+  text: {fontWeight: '700', color: '#fff'}
 });
