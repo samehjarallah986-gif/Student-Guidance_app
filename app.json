@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "run",
-    "slug": "run",
+    "name": "Student Guidance App",
+    "slug": "student-guidance-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "run",
+    "scheme": "student-guidance-app",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
