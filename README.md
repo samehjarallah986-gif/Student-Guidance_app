@@ -1,9 +1,9 @@
 # Student Career Guidance Platform
 
 ## Project Overview
-The student Career Guidance App is a mobile application tat helps students explore possible career paths and discover opportunities that support their future goals. The app combines career information, extracarricular activities, internships, and volunteering opportunities in one platfform.
+The student Career Guidance App is a mobile application that helps students explore possible career paths and discover opportunities that support their future goals. The app combines career information, extracarricular activities, internships, and volunteering opportunities in one platfform.
 
-Studens can search for experiences, filter them based ob their preferneces, and save activities they are interesed in. The platform also collects questionnaire data to better understand student interests and future aspirations.
+Studens can search for experiences, filter them based on their preferneces, and save activities they are interesed in. The platform also collects questionnaire data to better understand student interests and future aspirations.
 
 ---
 
