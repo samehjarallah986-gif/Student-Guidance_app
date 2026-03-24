@@ -113,7 +113,7 @@ services
 Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/student-career-guidance-app.git
+git clone https://github.com/samehjarallah986-gif/student-career-guidance-app.git
 ```
 
 Install dependencies:
